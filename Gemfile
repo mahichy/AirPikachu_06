@@ -18,6 +18,8 @@ gem 'jquery-rails'
 
 gem 'devise','~>4.2'
 
+gem 'toastr-rails', '~>1.0'
+
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
