@@ -32,3 +32,9 @@
 		<% end -%>
 	</li>
 </ul>
+<hr>
+
+<%= form_for @room do |f| %>
+	<%= f.hidden_field :active, value: true %>
+	<%= f.submit "Publish", id: "publish_button", class: "btn btn-normal btn-block" %>
+<% end -%>
