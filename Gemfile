@@ -23,6 +23,7 @@ gem 'omniauth', '~> 1.6'
 gem 'omniauth-facebook', '~> 4.0'
 
 gem 'paperclip','~>5.1.0'
+gem 'geocoder', '~> 1.4'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 

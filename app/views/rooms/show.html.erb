@@ -124,6 +124,19 @@
 
 		</div>
 		<hr>
+		<!-- Google Map -->
+		<div class="row">
+			<div id="map" style="width: 100%; height: 400px"></div>
+
+			<script src="https://maps.googleapis.com/maps/api/js"></script>
+			<script>
+				function initialize() {
+					var location = {lat: <%= @room.latitude %>, lng: <%= @room.longitude %>};
+					var map = new google.maps.Map(document.getElementById('map'))
+				}
+			</script>
+		</div>
+		<hr>
 
 		
 	</div>
