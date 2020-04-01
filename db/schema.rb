@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_31_132132) do
+ActiveRecord::Schema.define(version: 2020_04_01_064614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(version: 2020_03_31_132132) do
     t.integer "image_file_size"
     t.datetime "image_updated_at"
     t.index ["room_id"], name: "index_photos_on_room_id"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.integer "price"
+    t.integer "total"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
   create_table "rooms", force: :cascade do |t|
@@ -69,5 +80,6 @@ ActiveRecord::Schema.define(version: 2020_03_31_132132) do
   end
 
   add_foreign_key "photos", "rooms"
+  add_foreign_key "reservations", "users"
   add_foreign_key "rooms", "users"
 end
