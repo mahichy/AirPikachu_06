@@ -19,8 +19,8 @@ Rails.application.routes.draw do
       get 'amenities'
       get 'location'
       get 'preload'
-
       end
+      
       resources :photos, only: [:create, :destroy]
       resources :reservations, only: [:create]
   end
