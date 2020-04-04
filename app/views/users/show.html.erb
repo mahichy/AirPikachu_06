@@ -6,8 +6,16 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">Varification</div>
 			<div class="panel-body">
-				Email Address <br/>
-				Phone Number
+				<ul class="sidebar-list">
+					<% if @user.confirmation_token %>
+					<li>Email Address <span class="pull-right icon-babu"><i class="fa fa-check-circle-o"></i></span> </li>
+					<% end -%>
+					<% if @user.provaider %>
+					<li>Facebook <span class="pull-right icon-babu"><i class="fa fa-check-circle-o"></i></span> </li>
+					<% end -%>
+					<li>Phone Number <span class="pull-right icon-babu"><i class="fa fa-check-circle-o"></i></span> </li>
+					<li></li>
+				</ul>
 			</div>
 		</div>
 	</div>
