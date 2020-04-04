@@ -63,9 +63,9 @@ class RoomsController < ApplicationController
   # Reservation
   def preload
     today = Date.today
-    reservations = @room.reservations.where("start_date >= ? OR end_date >= ?, today, today")
+    reservation = @room.reservations.where("start_date >= ? OR end_date >= ?", today, today)
 
-    render json: reservations
+    render json: reservation
   end
 
   private
