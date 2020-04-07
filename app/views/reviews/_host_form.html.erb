@@ -1,6 +1,6 @@
 <!-- Trigger the modal with a button -->
 <button type="button" class="btn btn-normal" data-toggle="modal" data-target="#myModal">
-  Review Your Guest
+  Review Guest
 </button>
 
 <!-- Modal -->
@@ -14,7 +14,7 @@
         <h4 class="modal-title text-left">Review Your Guest</h4>
       </div>
       <div class="modal-body">
-        <%= form_for current_user.host_review.new do |f| %>
+        <%= form_for current_user.host_reviews.new do |f| %>
 
           <div class="form-group text-center">
             

@@ -8,17 +8,19 @@ class GuestReviewsController < ApplicationController
 	 					room_id: guest_review_params[:room_id]
 	 					).first
 
-	 	if !reservation.nil? && reservation.room.user.id == guest_review_params[:host_id].to_i					
+	 	if !@reservation.nil? && @reservation.room.user.id == guest_review_params[:host_id].to_i					
 	 		@has_reviewed = GuestReview.where(
 	 						reservation_id: @reservation.id,
-	 						guest_id: guest_review_params[:guest_id]
+	 						host_id: guest_review_params[:host_id]
 	 						).first
 
 	 		if @has_reviewed.nil?	
+
 	 			#Allow to review
 	 			@guest_review = current_user.guest_reviews.create(guest_review_params)
 	 			flash[:success] = "Review Created......"
 	 		else
+	 			
 	 			#Already Reviewed
 	 			flash[:success] = "You already reviewed this reservation"
 	 			end
