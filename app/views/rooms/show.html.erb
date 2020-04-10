@@ -17,7 +17,7 @@
 				<%= @room.address %>
 			</div>
 			<div class="col-md-4 text-center">
-				<%= image_tag avatar_url(@room.user), class: "image-circle avatar-large" %> <br> <br>
+				<%= image_tag avatar_url(@room.user), class: "image-circle avatar-small" %> <br> <br>
 				<%= @room.user.fullname %>
 			</div>
 		</div>
@@ -124,6 +124,26 @@
 
 		</div>
 		<hr>
+
+		<!-- REVIEWS -->
+
+		<div class="row">
+			<div class="col-md-12">
+				<h3>
+					<%= pluralize(@guest_reviews.count, "Review")%>
+					<span id="average_rating"></span>
+					<div class="container">
+						<div><%= render "reviews/guest_list" %></div>
+					</div>
+				</h3>
+			</div>
+		</div>
+		<br>
+		<hr>
+		
+
+
+
 		<!-- Google Map -->
 		<div class="row">
 			<div id="map" style="width: 100%; height: 400px"></div>
